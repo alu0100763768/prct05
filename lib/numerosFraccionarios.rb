@@ -13,23 +13,25 @@ class NumerosFraccionarios
     def +(other)
         denomi = mcm(@num_b, other.num_b)
         numera = ((denomi / @num_b) * @num_a) + ((denomi / other.num_b) * other.num_a)
-        NumerosFraccionarios.new(numera , denomi)
+        divisor = mcd(numera, denomi)
+        NumerosFraccionarios.new(numera / divisor  ,denomi / divisor)
     end
     
     def -(other)
         denomi = mcm(@num_b, other.num_b)
         numera = ((denomi / @num_b) * @num_a) - ((denomi / other.num_b) * other.num_a)
-        NumerosFraccionarios.new(numera , denomi)
+        divisor = mcd(numera, denomi)
+        NumerosFraccionarios.new(numera / divisor , denomi / divisor)
     end
     
     def /(other)
-        
-        NumerosFraccionarios.new(@num_a * other.num_b, @num_b * other.num_a)
+        divisor = mcd(@num_a * other.num_b, @num_b * other.num_a)
+        NumerosFraccionarios.new((@num_a * other.num_b) / divisor, (@num_b * other.num_a) / divisor)
     end
     
     def *(other)
-        
-        NumerosFraccionarios.new(@num_a * other.num_a, @num_b * other.num_b)
+        divisor = mcd(@num_a * other.num_b, @num_b * other.num_a)
+        NumerosFraccionarios.new(@num_a * other.num_a / divisor, @num_b * other.num_b / divisor)
     end
     
     def mcd(u, v)

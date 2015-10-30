@@ -9,9 +9,9 @@ class TestNumerosFraccionarios < Test::Unit::TestCase
     def test_simple
         assert_equal("(2/2)", @x.to_s)
         assert_equal("(2/3)", @y.to_s)
-        assert_equal("(4/6)", (@x*@y).to_s)
-        assert_equal("(6/4)", (@x/@y).to_s)
-        assert_equal("(10/6)",(@x+@y).to_s)
-        assert_equal("(2/6)",(@x-@y).to_s)
+        assert_equal("(2/3)", (@x*@y).to_s)
+        assert_equal("(3/2)", (@x/@y).to_s)
+        assert_equal("(5/3)",(@x+@y).to_s)
+        assert_equal("(1/3)",(@x-@y).to_s)
     end
 end
