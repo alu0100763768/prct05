@@ -11,5 +11,7 @@ class TestNumerosFraccionarios < Test::Unit::TestCase
         assert_equal("(2/3)", @y.to_s)
         assert_equal("(4/6)", (@x*@y).to_s)
         assert_equal("(6/4)", (@x/@y).to_s)
+        assert_equal("(10/6)",(@x+@y).to_s)
+        assert_equal("(2/6)",(@x-@y).to_s)
     end
 end

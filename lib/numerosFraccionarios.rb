@@ -11,11 +11,15 @@ class NumerosFraccionarios
     end
     
     def +(other)
-        
+        denomi = mcm(@num_b, other.num_b)
+        numera = ((denomi / @num_b) * @num_a) + ((denomi / other.num_b) * other.num_a)
+        NumerosFraccionarios.new(numera , denomi)
     end
     
     def -(other)
-        
+        denomi = mcm(@num_b, other.num_b)
+        numera = ((denomi / @num_b) * @num_a) - ((denomi / other.num_b) * other.num_a)
+        NumerosFraccionarios.new(numera , denomi)
     end
     
     def /(other)
@@ -28,4 +32,16 @@ class NumerosFraccionarios
         NumerosFraccionarios.new(@num_a * other.num_a, @num_b * other.num_b)
     end
     
+    def mcd(u, v)
+        u, v = u.abs, v.abs
+        while v != 0
+            u, v = v, u % v
+        end
+    u
+    end
+    
+    def mcm(u, v)
+       u, v = u.abs, v.abs
+       u*v
+    end
 end
